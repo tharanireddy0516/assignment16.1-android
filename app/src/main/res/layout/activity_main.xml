@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><!--xml layer starts here
+xml stands for extensible markup language
+it is a background code of layouts,widges etc-->
+<!--Relative layout is one of the types of layout
+It enables to specify the location of child objects relative to each other
+layout_width indicates the width of the relative layout
+layout_Height indicates the height of the relative layout
+context indicates the package name of the respective java class
+match parent will take complete height or width of text
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context="com.example.tharani.readwritefile.MainActivity">
+    <!--Linear layout is one of the types of layout
+       It aligns views one by one that is by vertically/horizontally
+      layout_width indicates the width of the Linear layout
+      layout_Height indicates the height of the Linear layout
+      context indicates the package name of the respective java class
+      match parent will take complete height or width of text
+      -->
+    <LinearLayout
+        android:id="@+id/enter_data_view"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+        <!--
+         EditText is a user interface element for entering and modifying text
+        EditText where taken indicating email,password-->
+        <!--string variables used to store the letters,numbers,symbols linked up with this program
+         it extracts string resource name and value in string.xml file-->
+        <EditText
+            android:id="@+id/enter_data"
+            android:layout_weight="2.25"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"/>
+        <requestFocus />
+        <!--Button is a widget or view
+        layout_alignParentTop,layout_centerHorizontal,layout_marginTop,layout_marginLeft,
+        layout_marginRight indicates the directions of text-->
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="0.75"
+            android:text="@string/add_data"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+    </LinearLayout><!--LinearLayout ends here-->
+    <!--Here taking text view for title
+        TextView is one of component of palette to display anything on layout
+        width indicates the width of the TextView
+        Height indicates the height of the TextView
+        wraps content wraps the enter content
+        layout_marginTop,layout_centerHorizontal indicates directions-->
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_below="@+id/enter_data_view"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#e8e4ea"
+        android:text="@string/content_from_file" />
+      <!--taking another textview-->
+    <TextView
+        android:id="@+id/show_data"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/txt_title"
+        android:layout_marginTop="10dp"
+        android:textColor="#eae4e5"
+        android:textSize="20sp"/>
+    <!--Button is a widget or view
+      match parent will take complete width of text
+      wrap_content will wrap the height -->
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_data"
+        android:text="@string/delete_file"
+        />
+
+
+
+</RelativeLayout><!--Relative layout ends here-->
